@@ -1,0 +1,6 @@
+[book]
+authors = ["Shinwoo Kim"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Data Structures and Algorithm I"
