@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Data Abstraction and ADT - Data Structures and Algorithm I</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction & Review</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="memory.html"><strong aria-hidden="true">1.1.</strong> Memory</a></li><li class="chapter-item expanded "><a href="abstraction.html" class="active"><strong aria-hidden="true">1.2.</strong> Data Abstraction and ADT</a></li></ol></li><li class="chapter-item expanded "><a href="bags.html"><strong aria-hidden="true">2.</strong> The Bag ADT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bags-array.html"><strong aria-hidden="true">2.1.</strong> Array Implementation and Array Resizing</a></li><li class="chapter-item expanded "><a href="bags-ll.html"><strong aria-hidden="true">2.2.</strong> Linked List Implementation</a></li><li class="chapter-item expanded "><a href="bags-implementation.html"><strong aria-hidden="true">2.3.</strong> Comparing Implementations</a></li></ol></li><li class="chapter-item expanded "><a href="stack-queue-deque.html"><strong aria-hidden="true">3.</strong> Stacks, Queues, and Deques</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sqd-array.html"><strong aria-hidden="true">3.1.</strong> Array Implementation</a></li><li class="chapter-item expanded "><a href="sqd-ll.html"><strong aria-hidden="true">3.2.</strong> Linked List Implementation</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">4.</strong> The List ADT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list-array.html"><strong aria-hidden="true">4.1.</strong> Array Implementation</a></li><li class="chapter-item expanded "><a href="list-ll.html"><strong aria-hidden="true">4.2.</strong> Linked List Implementation</a></li></ol></li><li class="chapter-item expanded "><a href="algorithms.html"><strong aria-hidden="true">5.</strong> Algorithm Analysis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="algs-bag-list.html"><strong aria-hidden="true">5.1.</strong> Analysis of the Bag and List implementations</a></li></ol></li><li class="chapter-item expanded "><a href="recusrion.html"><strong aria-hidden="true">6.</strong> Recursion</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="divide-and-conquer.html"><strong aria-hidden="true">6.1.</strong> Divide and Conquer</a></li><li class="chapter-item expanded "><a href="backtracking.html"><strong aria-hidden="true">6.2.</strong> Backtracking Algorithms</a></li></ol></li><li class="chapter-item expanded "><a href="sorting.html"><strong aria-hidden="true">7.</strong> Sorting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shellsort.html"><strong aria-hidden="true">7.1.</strong> ShellSort</a></li><li class="chapter-item expanded "><a href="merge-quick-sort.html"><strong aria-hidden="true">7.2.</strong> MergeSort and QuickSort</a></li><li class="chapter-item expanded "><a href="radixsort.html"><strong aria-hidden="true">7.3.</strong> Radix Sort</a></li></ol></li><li class="chapter-item expanded "><a href="iterators.html"><strong aria-hidden="true">8.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="dictionary.html"><strong aria-hidden="true">9.</strong> The Dictionary ADT</a></li><li class="chapter-item expanded "><a href="hashing.html"><strong aria-hidden="true">10.</strong> Hashing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hash-functions.html"><strong aria-hidden="true">10.1.</strong> Hash Functions and Collisions</a></li><li class="chapter-item expanded "><a href="open-addressing.html"><strong aria-hidden="true">10.2.</strong> Open Addressing</a></li><li class="chapter-item expanded "><a href="separate-chaining.html"><strong aria-hidden="true">10.3.</strong> Separate Chaining</a></li><li class="chapter-item expanded "><a href="hashing-analysis.html"><strong aria-hidden="true">10.4.</strong> Comparison and Analysis of Hashing</a></li><li class="chapter-item expanded "><a href="hash-table.html"><strong aria-hidden="true">10.5.</strong> Hash Table</a></li></ol></li><li class="chapter-item expanded "><a href="string-matching.html"><strong aria-hidden="true">11.</strong> String Matching</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rabin-karp.html"><strong aria-hidden="true">11.1.</strong> Rabin Karp Approach</a></li><li class="chapter-item expanded "><a href="boyer-moore.html"><strong aria-hidden="true">11.2.</strong> Boyer Moore Approach</a></li><li class="chapter-item expanded "><a href="string-matching-analysis.html"><strong aria-hidden="true">11.3.</strong> Comparison and Analysis</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Data Structures and Algorithm I</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="data-abstraction-and-adt"><a class="header" href="#data-abstraction-and-adt">Data Abstraction and ADT</a></h1>
+<h2 id="objected-oriented-programming"><a class="header" href="#objected-oriented-programming">Objected Oriented Programming</a></h2>
+<p>In Java, most data structures are organized into <strong>classes</strong> which are basically <em>blueprints</em> for data. The code below defines a Person class, but there are no instances of that class yet; there are no people because we haven't created them.</p>
+<pre><code class="language-Java">class Person {
+	private String name;
+	private int age;
+	private String address;
+	//...
+}
+</code></pre>
+<p>Classes are useful because they allow us to <strong>encapsulate</strong> the <em>data and operations</em> together (typically through <em>instance data</em> and <em>instance methods</em>). This is particularly useful for restricting access to specific data or implementation details (i.e, <strong>data hiding</strong> through non-public declarations). The author of the class can hide the details of the data type from the user and vary the levels of accessibility by using the <code>public</code>, <code>protected</code>, and <code>private</code> modifiers.</p>
+<table>
+  <tbody>
+    <tr>
+      <th></th>
+      <th>Class</th>
+      <th>Package</th>
+      <th>Subclass</th>
+      <th>World</th>
+    </tr>
+    <tr>
+      <th><code>public</code></th>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+    </tr>
+    <tr>
+      <th><code>protected</code></th>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:pink;">n</td>
+    </tr>
+    <tr>
+      <th>No Modifier</th>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:pink;">n</td>
+      <td style="text-align:center;background-color:pink;">n</td>
+    </tr>
+    <tr>
+      <th><code>private</code></th>
+      <td style="text-align:center;background-color:#b0f4b0;">y</td>
+      <td style="text-align:center;background-color:pink;">n</td>
+      <td style="text-align:center;background-color:pink;">n</td>
+      <td style="text-align:center;background-color:pink;">n</td>
+      </tr>
+  </tbody>
+</table>
+<p>However, data hiding also provides certain benefits to the user. Thanks to it, the user does not need to know (or know) the implementation details but can still access the class functionalities and data (provided they know the <em>nature of the data</em> and the public method specifications). For instance, a programmer can use the <code>BigInteger</code> or <code>ArrayList</code> classes without knowing how exactly they work (just that they do work).</p>
+<p>This idea of data hiding is called <strong>data abstraction</strong> and is closely related to <em>abstract data types (ADTs)</em>. Through <strong>encapsulation</strong>, access to the implementation details of a class can be restricted and through <em>data abstraction</em>, a user can use the class effectively without having to know these implementation details. From an implementer's perspective, public members (often public methods) give the interface and functionality of the objects, whereas the private members (often private data) hide the implementation details.</p>
+<p>We can use a few keywords to modify the data in the objects. With the <code>static</code> keyword, we can define a data that belongs to the class rather than the objects. Data that is defined using this keyword will be shared by all instances (objects) of the class. The <code>final</code> keyword provides various functionalities depending on the context. For variables, the <code>final</code> keyword means the value cannot change after being initially assigned; for methods, it means they cannot be overridden in a child classes; and for classes, it means they cannot be the parent in an inheritance relationship (no subclasses or child classes can be made from it).</p>
+<h3 id="instantiating-classes"><a class="header" href="#instantiating-classes">Instantiating Classes</a></h3>
+<p>Once we've defined a class, we can create a new instance of the class by using the <code>new</code> keyword and calling the constructor method (defined within the class). These instances are called <strong>objects</strong> and each object has the functionality and data as defined in the class.</p>
+<h3 id="building-new-classes-composition"><a class="header" href="#building-new-classes-composition">Building New Classes: Composition</a></h3>
+<p>Java has many predefined classes in its <a href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/module-summary.html"><strong>class library</strong></a>, which contains hundreds of classes where each class is designed for a specific purpose. However, there are many situations where we may need a class that is not already defined. In this case, we must define it ourselves. One technique for doing this is called <strong>Composition (Aggregation)</strong>.</p>
+<p>With composition, we can build new classes using components (instance variables) that are from previously-defined classes. We <em>compose</em> the class from existent &quot;pieces&quot; and define a &quot;<strong>has-a</strong>&quot; relationship between the new class and the old classes. Consider the following code as an example:</p>
+<pre><code class="language-Java">public class CompoClass {
+  private String name;
+	private Integer size;
+	public CompoClass(String n, int i) {
+		name = new String(n);
+		size = new Integer(i);
+	}
+	public void setCharAt(int i, char c) {
+		StringBuilder b = new StringBuilder(name);
+		b.setCharAt(i, c);
+		name = b.toString();
+	}
+}
+</code></pre>
+<h2 id="mutable-and-immutable-objects"><a class="header" href="#mutable-and-immutable-objects">Mutable and Immutable Objects</a></h2>
+<p>Notice that we are changing the string in a rather convoluted way. This is because we cannot access the inner representation of the String. However, even if we were able to access the string <code>name</code> it would prove difficult to change the content of the String. This is because String objects in Java are <strong>immutable</strong>. Immutable objects are instantiated from classes that do not contain mutator methods. The <code>String</code> class is a primary example as it cannot be altered after being created. However, other immutable objects exists such as the <code>Integer</code> or <code>Float</code> classes which have accessor methods but no mutators.</p>
+<p>Conversely, objects that have mutator methods (and allow us to change the content of the object) are called <strong>mutable</strong>. For instance, the <code>StringBuilder</code> class contains the <code>append()</code> method that allows the user to add characters to the current Stringbuilder. Similarly, the <code>ArrayList</code> class has an <code>add()</code> and <code>remove()</code> methods that allow us to manipulate the data that it stores.</p>
+<p>As a consequence of being immutable, objects such as strings require much more work for an action that could be done simply with mutation. For immutable objects, modifying them often means creating a new object and reassigning them. For example, consider concatenating <code>String</code>s.</p>
+<pre><code class="language-Java">String S1 = &quot;Hello &quot;;
+S1 = S1 + &quot;there&quot;;
+</code></pre>
+<p>Although Java is smart enough to know that we are appending Strings, under the hood, it creates a new String object with &quot;Hello there&quot; as the constructor argument and reassigns it to <code>S1</code>. Hence, if this operation is done repeatedly it will cause a lot of overhead, and run-time will be very poor.</p>
+<p>Yet, there are issues with being mutable as well. If we add an object to a collection (such as a list), and outside objects/methods that still maintain a reference to the object will still be able to modify the object and possibly destroy the property of the collection. For example, assume we make a subclass of <code>ArrayList</code>, called <code>SortedArrayList</code>. Now the data must be maintained in order based on the <code>compareTo()</code> method. Yet, if we have a <code>SortedArrayList</code> of <code>StringBuilder</code>s, we can still change one of the <code>StringBuilder</code>s (as long we have a reference), and modify it to break the ordering property.</p>
+<p>As a potential solution, we can put <strong>copies</strong> of the original objects into the collection (hence any outside references won't be able to change the new copied object). However, we still need to be careful not to mutate the objects within our collection. For example, an some access methods return references to the objects within the collection (which means that the objects within the collections can be mutated again). Hence, to be very safe, we should ensure that our accessor methods only return copies of the objects rather than references to the original.</p>
+<h2 id="making-copies"><a class="header" href="#making-copies">Making Copies</a></h2>
+<p>But how do we make copies? A typical Java object can be copied using a <strong>copy constructor</strong> or a <strong><code>clone()</code></strong> method. The <code>clone()</code> method is defined in class <code>Object</code> meaning it will work for all Java classes. For example, Java arrays and some other classes already implement a <code>clone()</code> method for us to use. However, for classes we defined, we need to ensure that they work properly. Hence we need to <strong>override</strong> <code>.clone()</code> in our own classes.</p>
+<h3 id="levels-of-copying"><a class="header" href="#levels-of-copying">Levels of Copying</a></h3>
+<p>If we copy an object, what do we do about any references within that object? </p>
+<p>In a <strong>shallow copy</strong>, we simply assign those references to the new object. Thus, both copies of the object have references to the same &quot;nested&quot; objects.</p>
+<p>In a <strong>deep copy</strong>, however, all nested objects must also be copied meaning that each copies of the object have references to different nested objects.</p>
+<pre><code class="language-Java">public class SBArray
+{
+	private StringBuilder [] A;
+	private int size;
+	// shallow copy
+	public SBArray(SBArray old)
+	{
+		A = old.A;
+		size = old.size;
+	}
+	// deeper copy
+	public SBArray(SBArray old)
+	{
+		A = new StringBuilder[
+				old.A.length];
+		size = old.size
+		for (int i=0; i&lt;size; i++)
+			A[i] = old.A[i];
+	}
+}
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>Shallow Copy</th><th>Deeper Copy</th><th>Deep Copy</th></tr></thead><tbody>
+<tr><td>Copy references from old object to new object.</td><td>We make a copy of the array for the new object</td><td>We make a copy of the array for the new object</td></tr>
+<tr><td>Objects within the copied object are shared by original and copy</td><td>But we do not copy the StringBuilders stored within it</td><td>We also copy all of the StringBuilders stored in the array</td></tr>
+<tr><td></td><td>Original and copy are still &quot;connected&quot; at some point</td><td>Original and copy are completely separated from each other</td></tr>
+</tbody></table>
+</div>
+<p>Generally speaking, (true) deep copying is more difficult than shallow copying. This is because for a deep copy, we need to follow all references in the original and make copies for the copy which could be several levels deep.</p>
+<p>For example, a object has a reference to front node. A shallow copy would only copy this single reference, but, a deep copy would have to traverse the entire list, copying each node, and copying the data in each node, and so on.... In fact, it's impossible to say that a copy is truly deep unless all copies made are deep.</p>
+<h3 id="building-new-classes-inheritance"><a class="header" href="#building-new-classes-inheritance">Building New Classes: Inheritance</a></h3>
+<p>Besides, composition, another technique to building classes is called <strong>inheritance</strong>. With inheritance, we build a new class (subclass) by extending a previously-defined class (superclass).</p>
+<p>Note that the subclass has all of the properties(data and methods) defined in the superclass. Inheritance defines an <strong>is-a</strong> relationship between subclass and superclass. That is, a subclass <strong>is a</strong> superclass, and subclass objects can be assigned to superclass variables. However, the opposite is not true. That is, as superclass <strong>IS NOT</strong> a subclass and superclass objects cannot be assigned to subclass variables.</p>
+<pre><code class="language-Java">// Assume SubFoo is a subclass of Foo – consider the
+// statements below
+Foo f1;
+SubFoo s1;
+f1 = new Foo();  // obviously fine
+f1 = new SubFoo();  // fine, but now we
+        // only have access to the public methods and
+        // variables initially defined in class Foo()
+f1.foomethod();  // fine
+f1.subfoomethod();  // illegal – method does not exist
+((SubFoo)f1).subfoomethod(); // fine, since now ref.
+		    // has been cast to the actual class
+s1 = new SubFoo();
+s1.subfoomethod();
+s1.foomethod();
+s1 = new Foo();  // illegal – isA is one way
+</code></pre>
+<h4 id="polymorphism"><a class="header" href="#polymorphism">Polymorphism</a></h4>
+<p><strong>Polymorphism</strong> allows superclass and subclass objects to be accessed in a regular, consistent way. For example, an array or collection of <strong>superclass references</strong> can be used to access a <strong>mixture of superclass and subclass objects</strong>. So, if a method is defined in both the superclass and subclass (with identical signatures), the <strong>version corresponding to each class will be used</strong> in a call from the array. The idea is that the methods are similar in nature but the redefinition in the subclass gears the method more specifically to the data / properties of the subclass.</p>
+<p>For example, consider the class <code>Animal</code> which describes a large number of objects. Let's say each Animal can <code>move()</code>. Without more knowledge of the specific animal, we don't really know how the animal would move. But now, consider a subclass of <code>Animal</code>, say <code>Bird</code>. We can redefine (override) the <code>move()</code> method to reflect the specific details of a Bird such as, <em>it will fly.</em></p>
+<pre><code class="language-Java">public class Animal
+{
+	// omitted decls
+	public void move()
+	{
+		System.out.println(&quot;I move&quot;);
+	}
+}
+
+public class Bird extends Animal
+{
+	// omitted decls
+	public void move()
+	{
+		System.out.println(&quot;I fly&quot;);
+	}
+}
+</code></pre>
+<p>Generally, each subclass would override the <code>move()</code> method in its own way.</p>
+<pre><code class="language-Java">Animal [] A = new Animal[3];
+A[0] = new Bird();
+A[1] = new Person();
+A[2] = new Fish();
+for (int i = 0; i &lt; A.length; i++)
+		A[i].move();
+</code></pre>
+<p>Notice that each call is <strong>syntactically identical</strong>. Their reference and method spec(s) are the same; but the code is executed is based on type of object being stored Polymorphism is implemented utilizing two important ideas: <strong>(1) Method Overriding</strong> and <strong>(2) Dynamic (or late) Binding</strong></p>
+<hr />
+<hr />
+<p>When a superclass's method is redefined in the subclass with an <strong>identical method signature</strong>, this is called <strong>method overriding</strong>. Since the signatures are identical, rather than overloading the method (ad hoc polymorphism), it is instead <strong>overriding the method</strong>.</p>
+<ul>
+<li>For a subclass object, the definition in the subclass <em>replaces</em> the version in the superclass, even if a superclass reference is used to access the object</li>
+<li>Superclass version can still be accessed via the <code>super</code> reference</li>
+</ul>
+<h4 id="dynamic-or-late-binding"><a class="header" href="#dynamic-or-late-binding">Dynamic (or late) Binding</a></h4>
+<p>Dynamic binding means that the code executed for a method call is associated with the call during <strong>run-time</strong>. The actual method executed is determined by the <strong>type of the object</strong>, not the type of the reference.</p>
+<p>Polymorphism is very useful if we want to access collections of mixed data types consistently. For example, a collection of different graphical figures could call each <code>draw()</code> method consistently, but which would be drawn differently.</p>
+<h3 id="abstract-classes"><a class="header" href="#abstract-classes">Abstract Classes</a></h3>
+<p>Sometimes in a class hierarchy, a class may be defined simply to give cohesion to its subclasses. <em>I.e.,</em> No objects of that class will ever be defined, but instance data and methods will still be inherited by all subclasses This is an <strong>abstract class</strong>.</p>
+<ul>
+<li>Keyword <code>abstract</code> used in declaration</li>
+<li>One or more methods may be declared to be abstract and are thus not implemented</li>
+<li>No objects may be instantiated</li>
+</ul>
+<p>Subclasses of an abstract class must implement all abstract methods, or they too must be declared to be abstract.</p>
+<h4 id="advantages-of-an-abstract-class"><a class="header" href="#advantages-of-an-abstract-class">Advantages of an Abstract Class</a></h4>
+<ul>
+<li>We can still use superclass reference to access all subclass objects in polymorphic way.
+<ul>
+<li>If a method does not make sense or is not fully realizable in the superclass, we declare it as abstract.
+For example, the <code>move()</code> method in <code>Animal</code> may be better as an abstract method. In this case <code>Animal</code> would need to be an abstract class.</li>
+</ul>
+</li>
+<li>We can still define any common data and operations in the superclass, which would be inherited by the subclasses.</li>
+<li>Helps to organize class hierarchy</li>
+</ul>
+<h3 id="interfaces"><a class="header" href="#interfaces">Interfaces</a></h3>
+<p>Unlike some programming langauges, Java allows <em>only</em> <strong>single inheritance</strong>. That is, one class cannot have more than one parent. Java language developers chose to offer only single inheritance for two basic reasons:
+1. simplifying the implementation of the compiler/interpreter
+2. it's easier for programmers to understand what is happening when there is only single inheritance</p>
+<p>However, it is sometimes useful to access an object through more than one type of superclass references. Often, when a programmer wants multiple inheritance, they want it for polymorphism (i.e. they want a class to be able to look like two different other things). Java offers a way to do this with <strong>interfaces</strong>.</p>
+<p>An <strong>interface</strong> is a named set of methods (i.e. method headers, but no bodies). Basically, an interface is an abstract class without any instance data (although there are differences between abstract classes and interfaces).</p>
+<p>In interfaces:</p>
+<ol>
+<li>Static <em>constants</em> are allowed</li>
+<li>Default methods are allowed</li>
+<li>Static methods are allowed</li>
+<li><strong>No instance data</strong> is allowed</li>
+<li>Regular instance methods have <strong>no bodies</strong></li>
+<li>Interface itself <strong>cannot be instantiated</strong></li>
+</ol>
+<p>Any Java class can implement an interface (no matter what its inheritance). In fact, any Java class <strong>can implement multiple interfaces</strong>. To implement an interface, a class must declare so in the class header and implement all methods in the interface.</p>
+<p>For example, consider the following interfaces:</p>
+<pre><code class="language-Java">public interface Laughable
+{
+	public void laugh();
+}
+public interface Booable
+{
+	public void boo();
+}
+</code></pre>
+<p>Note that any Java class can implement <code>Laughable</code> by implementing the method <code>laugh()</code>, implement <code>Booable</code> by implementing the method <code>boo()</code>.</p>
+<pre><code class="language-Java">public class Comedian implements Laughable, Booable
+{
+	// various methods here (constructor, etc.)
+	public void laugh()
+	{
+		System.out.println(“Ha ha ha”);
+	}
+	public void boo()
+	{
+		System.out.println(“You stink!”);
+	}
+}
+</code></pre>
+<p>All of the polymorphism behavior also applies to interfaces. The interface acts as a superclass and the implementing classes are like subclasses to it. An interface reference variable <strong>can be used to reference any object that implements that interface</strong> and <strong>only interface methods are accessible through that interface reference.</strong></p>
+<pre><code class="language-Java">Laughable [] funny = new Laughable[3];
+funny[0] = new Comedian();
+funny[1] = new SitCom(); // implements Laughable
+funny[2] = new Clown();  // implements Laughable
+for (int i = 0; i &lt; funny.length; i++)
+	funny[i].laugh();
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="memory.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="bags.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="memory.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="bags.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

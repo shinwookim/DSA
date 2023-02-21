@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Memory - Data Structures and Algorithm I</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction & Review</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="memory.html" class="active"><strong aria-hidden="true">1.1.</strong> Memory</a></li><li class="chapter-item expanded "><a href="abstraction.html"><strong aria-hidden="true">1.2.</strong> Data Abstraction and ADT</a></li></ol></li><li class="chapter-item expanded "><a href="bags.html"><strong aria-hidden="true">2.</strong> The Bag ADT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bags-array.html"><strong aria-hidden="true">2.1.</strong> Array Implementation and Array Resizing</a></li><li class="chapter-item expanded "><a href="bags-ll.html"><strong aria-hidden="true">2.2.</strong> Linked List Implementation</a></li><li class="chapter-item expanded "><a href="bags-implementation.html"><strong aria-hidden="true">2.3.</strong> Comparing Implementations</a></li></ol></li><li class="chapter-item expanded "><a href="stack-queue-deque.html"><strong aria-hidden="true">3.</strong> Stacks, Queues, and Deques</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="sqd-array.html"><strong aria-hidden="true">3.1.</strong> Array Implementation</a></li><li class="chapter-item expanded "><a href="sqd-ll.html"><strong aria-hidden="true">3.2.</strong> Linked List Implementation</a></li></ol></li><li class="chapter-item expanded "><a href="list.html"><strong aria-hidden="true">4.</strong> The List ADT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list-array.html"><strong aria-hidden="true">4.1.</strong> Array Implementation</a></li><li class="chapter-item expanded "><a href="list-ll.html"><strong aria-hidden="true">4.2.</strong> Linked List Implementation</a></li></ol></li><li class="chapter-item expanded "><a href="algorithms.html"><strong aria-hidden="true">5.</strong> Algorithm Analysis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="algs-bag-list.html"><strong aria-hidden="true">5.1.</strong> Analysis of the Bag and List implementations</a></li></ol></li><li class="chapter-item expanded "><a href="recusrion.html"><strong aria-hidden="true">6.</strong> Recursion</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="divide-and-conquer.html"><strong aria-hidden="true">6.1.</strong> Divide and Conquer</a></li><li class="chapter-item expanded "><a href="backtracking.html"><strong aria-hidden="true">6.2.</strong> Backtracking Algorithms</a></li></ol></li><li class="chapter-item expanded "><a href="sorting.html"><strong aria-hidden="true">7.</strong> Sorting</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shellsort.html"><strong aria-hidden="true">7.1.</strong> ShellSort</a></li><li class="chapter-item expanded "><a href="merge-quick-sort.html"><strong aria-hidden="true">7.2.</strong> MergeSort and QuickSort</a></li><li class="chapter-item expanded "><a href="radixsort.html"><strong aria-hidden="true">7.3.</strong> Radix Sort</a></li></ol></li><li class="chapter-item expanded "><a href="iterators.html"><strong aria-hidden="true">8.</strong> Iterators</a></li><li class="chapter-item expanded "><a href="dictionary.html"><strong aria-hidden="true">9.</strong> The Dictionary ADT</a></li><li class="chapter-item expanded "><a href="hashing.html"><strong aria-hidden="true">10.</strong> Hashing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="hash-functions.html"><strong aria-hidden="true">10.1.</strong> Hash Functions and Collisions</a></li><li class="chapter-item expanded "><a href="open-addressing.html"><strong aria-hidden="true">10.2.</strong> Open Addressing</a></li><li class="chapter-item expanded "><a href="separate-chaining.html"><strong aria-hidden="true">10.3.</strong> Separate Chaining</a></li><li class="chapter-item expanded "><a href="hashing-analysis.html"><strong aria-hidden="true">10.4.</strong> Comparison and Analysis of Hashing</a></li><li class="chapter-item expanded "><a href="hash-table.html"><strong aria-hidden="true">10.5.</strong> Hash Table</a></li></ol></li><li class="chapter-item expanded "><a href="string-matching.html"><strong aria-hidden="true">11.</strong> String Matching</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rabin-karp.html"><strong aria-hidden="true">11.1.</strong> Rabin Karp Approach</a></li><li class="chapter-item expanded "><a href="boyer-moore.html"><strong aria-hidden="true">11.2.</strong> Boyer Moore Approach</a></li><li class="chapter-item expanded "><a href="string-matching-analysis.html"><strong aria-hidden="true">11.3.</strong> Comparison and Analysis</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Data Structures and Algorithm I</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="memory"><a class="header" href="#memory">Memory</a></h1>
+<p>Let us first talk about some consequences with using the Java programming language, mainly how Java treats <em>References, Pointers, and Memory</em>. Recall that Java has two kinds of variables: <strong>primitive</strong> and <strong>reference</strong>. Primitive types are the basic building block data of the language and include the <code>int</code>, <code>double</code>, <code>boolean</code>, and <code>char</code> (among others) where as Reference types are variable that <em>refer</em> to objects. As we will be programming primarily in Java, it is important know how Java treats each type of variable.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: right">Variable Type</th><th><strong>Primitive Type</strong></th><th><strong>Reference Type</strong></th></tr></thead><tbody>
+<tr><td style="text-align: right">How do we define it?</td><td><code>int i;</code></td><td><code>String s;</code></td></tr>
+<tr><td style="text-align: right">How do we initialize it?</td><td><code>i = 445;</code></td><td><code>s = new String(&quot;Hello!&quot;);</code></td></tr>
+<tr><td style="text-align: right">What does it store?</td><td>The actual underlying type is stored at a location in memory</td><td>The address of an object is stored at a location in memory</td></tr>
+<tr><td style="text-align: right">How do we copy it?</td><td><code>int j = i;</code> copies the value at <code>i</code> to <code>j</code>.</td><td><code>String t = s;</code> copies the reference of <code>s</code> to <code>t</code> and does not directly affect the object. <br> <code>String u = new String(s)</code> creates a new object whose contents are identical to <code>s</code></td></tr>
+<tr><td style="text-align: right">How do we compare it?</td><td><code>if (i == j)</code> compares the two values</td><td><code>if (s == t)</code> returns true because they both have same references. However, <code>if (s == u)</code> returns false since <code>s</code> and <code>u</code> have different references (even though their value is the same).</td></tr>
+</tbody></table>
+</div>
+<p>One important consequence of having two types is that operators can only operate properly on primitive types. If we were to use an operator (such as <code>==</code>) on a reference type, it will not work as expected. This is because the operators operate directly on the references (comparing the memory address held by the reference variables) and not the objects the variables are referring to.</p>
+<p>Instead, to compare the actual objects at the reference, we need to use named methods that compares the content (since Java, unlike C++ or Python, does not support operator overloading). Typically, these methods are called <code>.equals()</code> or <code>.comparesTo()</code> and are predefined in most library classes, but can also be redefined in our own classes as needed.</p>
+<h2 id="references-vs-pointers"><a class="header" href="#references-vs-pointers">References vs Pointers</a></h2>
+<p>Many lower level programming languages, such as C, support <strong>pointer variables</strong> which stores memory addresses and allow us to directly access data in the RAM. </p>
+<p><img src="assets/Pointers.png" alt="Pointers" /></p>
+<p>Here, variables <code>x</code> and <code>y</code> are pointers which store memory locations. The objects themselves live at the memory locations the pointer points to. Note, since these variables holds an address, operations on the variables means operations on the addresses (and not the data at the address). For instance, if we run <code>x = y;</code>, we would have both <code>x</code> and <code>y</code> pointing to the same memory location (and hence the same object). </p>
+<p><img src="assets/aliasing.png" alt="aliasing.png" /></p>
+<p>Now, <code>x</code> is no longer pointing to the original memory address, but at the same address <code>y</code> is pointing to. When, two (or more) pointers point to the same object, this is called <strong>aliasing</strong>.</p>
+<p>To gain access to the object that <code>x</code> points to, we can <strong>dereference a pointer</strong> (explicitly tell the computer to go to that address). In C, this is done with the <code>*</code> operator. Hence, if we really wanted to have two separate objects, but want one of them to be a copy of the other, we could do the following (assuming the data is set up properly):</p>
+<pre><code class="language-C">*x = *y;
+</code></pre>
+<p>Now, <code>x</code> is points to its original location (as does <code>y</code>), but the values at the position <code>x</code> is pointing to is changing:</p>
+<p><img src="assets/dereferencing%20a%20pointer.png" alt="dereferencing a pointer" /></p>
+<p>Java, by contrast, does not have any pointers. Instead, it only has <strong>references</strong> which behave similarly to pointers but with more restrictions. For instance, we cannot explicitly dereference variables (thus there is no dereference operator). Instead, dereferencing is handled implicitly and we can access data and methods using the &quot;dot&quot; operator. For example, to copy an an entire object we would use a method such as a <code>clone()</code> method (also called a <strong>copy constructor</strong>). </p>
+<p>Yet, even without pointers, <strong>aliasing</strong> can still occur in Java.</p>
+<pre><code class="language-Java">StringBuilder S1 = new StringBuilder(&quot;Hello&quot;);
+StringBuilder S2 = S1;
+S1.append(&quot; There&quot;);
+S2.append(&quot; CS 0445 Students&quot;);
+System.out.println(S1.toString());
+// Output: Hello There CS 0445 Students
+</code></pre>
+<p>Here, we mutated using two different variables but both mutated the same object. Hence, you must be aware of when you want a new object or a reference to an old one.</p>
+<h2 id="java-memory-use"><a class="header" href="#java-memory-use">Java Memory Use</a></h2>
+<p>Java is a high-level language in that memory allocation is handled dynamically and implicitly. Specifically, memory is allocated using the <code>new</code> operator and once allocated, objects exist for an indefinite period of time, as long as there is an active reference to the object. When there are no references to objects, they are no longer accessible in the program, and marked for <strong>Garbage Collection</strong>.</p>
+<p>The Java <strong>garbage collector</strong> is a process that runs in the background during program execution. When the amount of available memory runs low, the garbage collector reclaims objects that have been marked for collection. A fairly sophisticated algorithm is used to determine which objects can be garbage collected but due to its long run-time, if we have plenty of memory is available, the garbage collector will not run.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="abstraction.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="abstraction.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

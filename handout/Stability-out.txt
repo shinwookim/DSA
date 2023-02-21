@@ -1,0 +1,112 @@
+stability > java Stability
+Enter another object? (y/n) y
+Class of new object? People
+Name? Herb
+Age? 40
+Name: Herb Age: 40
+Enter another object? (y/n) y
+Class of new object? People
+Name? Arnold
+Age? 40
+Name: Arnold Age: 40
+Enter another object? (y/n) y
+Class of new object? People
+Name? Marge
+Age? 40
+Name: Marge Age: 40
+Enter another object? (y/n) y
+Class of new object? People
+Name? Zeke
+Age? 25
+Name: Zeke Age: 25
+Enter another object? (y/n) y
+Class of new object? People
+Name? Bertha
+Age? 25
+Name: Bertha Age: 25
+Enter another object? (y/n) y
+Class of new object? People
+Name? Ingmar
+Age? 25
+Name: Ingmar Age: 25
+Enter another object? (y/n) y
+Class of new object? People
+Name? Abigail
+Age? 40
+Name: Abigail Age: 40
+Enter another object? (y/n) y
+Class of new object? People
+Name? Chester
+Age? 40
+Name: Chester Age: 40
+Enter another object? (y/n) y
+Class of new object? People
+Name? Mario
+Age? 20
+Name: Mario Age: 20
+Enter another object? (y/n) n
+Here is the data: 
+Name: Herb Age: 40
+Name: Arnold Age: 40
+Name: Marge Age: 40
+Name: Zeke Age: 25
+Name: Bertha Age: 25
+Name: Ingmar Age: 25
+Name: Abigail Age: 40
+Name: Chester Age: 40
+Name: Mario Age: 20
+
+Please select the method to be used for sorting:
+(toString compareTo compareTo getName getAge equals hashCode )
+getName
+Here is the QuickSorted data in P1: 
+Name: Abigail Age: 40
+Name: Arnold Age: 40
+Name: Bertha Age: 25
+Name: Chester Age: 40
+Name: Herb Age: 40
+Name: Ingmar Age: 25
+Name: Marge Age: 40
+Name: Mario Age: 20
+Name: Zeke Age: 25
+
+Here is the MergeSorted data in P2: 
+Name: Abigail Age: 40
+Name: Arnold Age: 40
+Name: Bertha Age: 25
+Name: Chester Age: 40
+Name: Herb Age: 40
+Name: Ingmar Age: 25
+Name: Marge Age: 40
+Name: Mario Age: 20
+Name: Zeke Age: 25
+
+
+Please select the method to be used for sorting:
+(toString compareTo compareTo getName getAge equals hashCode )
+getAge
+Here is the QuickSorted data in P1: 
+Name: Mario Age: 20
+Name: Ingmar Age: 25
+Name: Zeke Age: 25
+Name: Bertha Age: 25
+Name: Marge Age: 40
+Name: Abigail Age: 40
+Name: Arnold Age: 40
+Name: Chester Age: 40
+Name: Herb Age: 40
+
+Here is the MergeSorted data in P2: 
+Name: Mario Age: 20
+Name: Bertha Age: 25
+Name: Ingmar Age: 25
+Name: Zeke Age: 25
+Name: Abigail Age: 40
+Name: Arnold Age: 40
+Name: Chester Age: 40
+Name: Herb Age: 40
+Name: Marge Age: 40
+
+
+Please select the method to be used for sorting:
+(toString compareTo compareTo getName getAge equals hashCode )
